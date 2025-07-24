@@ -1,4 +1,4 @@
-package com.example.daily_weather_forecast_backend;
+package com.example.daily_weather_forecast_backend.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

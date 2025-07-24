@@ -1,4 +1,4 @@
-package com.example.daily_weather_forecast_backend;
+package com.example.daily_weather_forecast_backend.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
