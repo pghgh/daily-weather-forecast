@@ -1,20 +1,13 @@
 package com.example.daily_weather_forecast_backend.weather.service;
-import com.example.daily_weather_forecast_backend.weather.dto.LocationDto;
-import com.example.daily_weather_forecast_backend.weather.dto.WeatherDto;
-import com.example.daily_weather_forecast_backend.weather.entity.Weather;
-import com.example.daily_weather_forecast_backend.weather.repository.WeatherRepository;
-import org.junit.jupiter.api.BeforeEach;
+import com.example.daily_weather_forecast_backend.location.dto.LocationDto;
+import com.example.daily_weather_forecast_backend.location.repository.LocationRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDateTime;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 /*
 
@@ -29,9 +22,9 @@ https://www.geeksforgeeks.org/advance-java/resolve-parameterresolutionexception-
 public class WeatherServiceImplTest {
 
     @Mock
-    private WeatherRepository weatherRepository;
+    private LocationRepository locationRepository;
     @InjectMocks
-    private WeatherService weatherService = new WeatherServiceImpl(weatherRepository);
+    private WeatherService weatherService = new WeatherServiceImpl(locationRepository);
 
     // TAKEN FROM END 1
     @Test

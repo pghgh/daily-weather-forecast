@@ -1,9 +1,9 @@
 package com.example.daily_weather_forecast_backend.weather.service;
 
-import com.example.daily_weather_forecast_backend.weather.dto.LocationDto;
+import com.example.daily_weather_forecast_backend.location.dto.LocationDto;
+import com.example.daily_weather_forecast_backend.location.entity.Location;
+import com.example.daily_weather_forecast_backend.location.repository.LocationRepository;
 import com.example.daily_weather_forecast_backend.weather.dto.WeatherDto;
-import com.example.daily_weather_forecast_backend.weather.entity.Weather;
-import com.example.daily_weather_forecast_backend.weather.repository.WeatherRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -38,7 +38,7 @@ public class WeatherServiceImpl implements WeatherService {
     // TAKEN FROM START 1
     private final RestClient restClient = RestClient.create();
     // TAKEN FROM END 1
-    private final WeatherRepository weatherRepository;
+    private final LocationRepository locationRepository;
 
     @Override
     public LocationDto getLatAndLonOfLocation(LocationDto locationDto) {
@@ -112,16 +112,13 @@ public class WeatherServiceImpl implements WeatherService {
         }
         // TAKEN FROM END 3
 
-        Weather weather = new Weather();
-        weather.setCityName(cityName);
-        weather.setLat(lat);
-        weather.setLon(lon);
-        weather.setTemperature(temp);
-        weather.setTimestamp(timeNow);
-        weatherRepository.save(weather);
+        Location location = new Location();
+        location.setCityName(cityName);
+        location.setLat(lat);
+        location.setLon(lon);
+        locationRepository.save(location);
 
-        Long id = weather.getId();
-        WeatherDto weatherDto = new WeatherDto(id, lat, lon, cityName, timeNow, temp);
+        WeatherDto weatherDto = new WeatherDto(location.getId(), lat, lon, cityName, timeNow, temp);
         return weatherDto;
     }
 }
