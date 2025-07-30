@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Spring Initializr https://start.spring.io/ was used for setting up the project -->
+
+<!-- TAKEN FROM 1
+
+The solution for solving a problem related to the Lombok usage was taken from
+https://medium.com/@pratikpatel17791/resolving-lombok-symbol-not-found-error-in-java-21-and-above-12dea43d59ba
+
+-->
+
+<!-- TAKEN FROM 2
+
+The settings for making warnings related to the usage of the surefire plugin disappear were taken from:
+2.1 https://stackoverflow.com/a/78056291
+2.2 https://github.com/mockito/mockito/issues/3111
+
+-->
+
+<!-- TAKEN FROM 3
+
+The settings for using Mockito in combination with JUnit were taken from:
+3.1 https://www.geeksforgeeks.org/advance-java/resolve-parameterresolutionexception-in-junit-5/
+3.2 https://github.com/mockito/mockito/issues/3321
+
+-->
+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -59,6 +85,10 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<!-- TAKEN FROM START 1 -->
+			<version>1.18.36</version>
+			<scope>provided</scope>
+			<!-- TAKEN FROM END 1 -->
 			<optional>true</optional>
 		</dependency>
 		<dependency>
@@ -66,6 +96,32 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- TAKEN FROM START 3.1 -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>5.10.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<!-- TAKEN FROM START 3.2 -->
+			<version>5.11.0</version>
+			<!-- TAKEN FROM END 3.2 -->
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<!-- TAKEN FROM START 3.2 -->
+			<version>5.11.0</version>
+			<!-- TAKEN FROM END 3.2 -->
+			<scope>test</scope>
+		</dependency>
+		<!-- TAKEN FROM END 3.1 -->
 	</dependencies>
 
 	<build>
@@ -78,6 +134,9 @@
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+							<!-- TAKEN FROM START 1 -->
+							<version>1.18.36</version>
+							<!-- TAKEN FROM END 1 -->
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
@@ -90,10 +149,29 @@
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+							<!-- TAKEN FROM START 1 -->
+							<version>1.18.36</version>
+							<!-- TAKEN FROM END 1 -->
 						</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<!-- TAKEN FROM START 2.1 -->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+				<configuration>
+					<!-- TAKEN FROM START 2.2 -->
+					<argLine>-XX:+EnableDynamicAgentLoading -Xshare:off</argLine>
+					<!-- TAKEN FROM END 2.2 -->
+				</configuration>
+			</plugin>
+
+			<!-- TAKEN FROM END 2.1 -->
+
 		</plugins>
 	</build>
 

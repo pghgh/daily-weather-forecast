@@ -14,10 +14,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import org.hibernate.annotations.CreationTimestamp;
 
+/*
+TAKEN FROM 1
+
+The settings for specifying the database schema were taken from https://stackoverflow.com/questions/39430422/how-to-properly-specify-database-schema-in-spring-boot
+ */
+
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "weather")
+// TAKEN FROM START 1
+@Table(name = "weather", schema = "public")
+// TAKEN FROM END 1
 @Getter
 @Setter
 @ToString
@@ -38,12 +46,6 @@ public class Weather {
 
     @Column(name = "city_name")
     private String cityName;
-
-    @Column(name = "country_code")
-    private String countryCode;
-
-    @Column(name = "timezone")
-    private String timezone;
 
     @Column(name = "timestamp")
     @CreationTimestamp

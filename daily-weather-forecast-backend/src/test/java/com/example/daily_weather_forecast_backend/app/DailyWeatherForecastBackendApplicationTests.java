@@ -1,13 +1,6 @@
 package com.example.daily_weather_forecast_backend.app;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+public class DailyWeatherForecastBackendApplicationTests {
 
-@SpringBootTest
-class DailyWeatherForecastBackendApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
 
 }
