@@ -149,9 +149,6 @@ The settings for using Mockito in combination with JUnit were taken from:
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
-							<!-- TAKEN FROM START 1 -->
-							<version>1.18.36</version>
-							<!-- TAKEN FROM END 1 -->
 						</exclude>
 					</excludes>
 				</configuration>
