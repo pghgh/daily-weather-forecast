@@ -29,19 +29,17 @@ export class AppComponent {
 	temperature = 0;
 	hour = 0;
 	// TAKEN FROM START 2
-	form: FormGroup;
+	formWeather: FormGroup;
 
 	constructor(private displayWeatherService: DisplayWeatherService, private fb: FormBuilder) {
-		this.form = new FormGroup({})
+		this.formWeather = new FormGroup({})
 	}
 
-	/*
 	ngOnInit() {
-		this.form = this.fb.group({
+		this.formWeather = this.fb.group({
 			cityNameInput: ['Vienna', Validators.required],
 		});
 	}
-	 */
 
 	onSubmit(form: FormGroup) {
 		console.log('Name', form.value.cityNameInput);

@@ -28,7 +28,7 @@ public class WeatherServiceImplTest {
 
     // TAKEN FROM END 1
     @Test
-    public void weatherService_afterCallinggetLatAndLonOfLocation_UpdatesLatAndLonInfoOfCity() {
+    public void weatherService_afterCallingGetLatAndLonOfLocation_UpdatesLatAndLonInfoOfCity() {
         LocationDto locationDtoVienna = new LocationDto("Vienna", 0., 0.);
         double latVienna = 48.20849;
         double lonVienna = 16.37208;
