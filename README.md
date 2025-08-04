@@ -13,4 +13,4 @@ Daily Weather Forecast - A web application that offers, for a given city, the te
 
 - The weather data was obtained from [open-meteo.com](https://open-meteo.com/).
 - The image used for the UI was [created by Rosa Suave and taken from Flaticon](https://www.flaticon.com/free-icon/weather-forecast_9176568?term=weather&page=1&position=25&origin=search&related_id=9176568).
-- Tailwind components for [cards](https://v1.tailwindcss.com/components/cards#stacked) and [forms](https://v1.tailwindcss.com/components/forms#underline-form) were used when creating the UI.
+- The designs of the Tailwind components for [cards](https://v1.tailwindcss.com/components/cards#stacked) and [forms](https://v1.tailwindcss.com/components/forms#underline-form) were reused when creating the UI.
