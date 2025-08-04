@@ -21,12 +21,14 @@
 <!-- TAKEN FROM START 3 -->
 <!-- TAKEN FROM START 5 -->
 <div class="flex flex-row min-h-screen justify-center items-center">
-<!-- TAKEN FROM END 5 -->
+	<!-- TAKEN FROM END 5 -->
 	<div class="max-w-sm rounded overflow-hidden shadow-lg">
 		<!-- TAKEN FROM START 1 -->
 		<img class="w-full" src="assets/weather-forecast.png">
 		<!-- TAKEN FROM END 1 -->
-		<a class="text-[13px]" href="https://www.flaticon.com/free-icon/weather-forecast_9176568?term=weather&page=1&position=25&origin=search&related_id=9176568" title="weather forecast icons">
+		<a class="text-[13px]"
+		   href="https://www.flaticon.com/free-icon/weather-forecast_9176568?term=weather&page=1&position=25&origin=search&related_id=9176568"
+		   title="weather forecast icons">
 			"Weather Forecast free icon" created by Rosa Suave - Flaticon</a>
 		<div class="px-6 py-4">
 			<div class="font-bold text-xl mb-2">{{ cityName }}, at {{ hour }} o'clock GMT</div>
@@ -38,7 +40,7 @@
 			<!-- TAKEN FROM START 2 -->
 			<!-- TAKEN FROM START 4 -->
 			<form class="w-full max-w-sm" [formGroup]="formWeather" (ngSubmit)="onSubmit(formWeather)">
-			<!-- TAKEN FROM END 4 -->
+				<!-- TAKEN FROM END 4 -->
 				<div class="flex items-center border-b border-teal-500 py-2">
 					<!-- TAKEN FROM START 4 -->
 					<input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
@@ -52,6 +54,9 @@
 			</form>
 			<!-- TAKEN FROM END 2 -->
 		</div>
+		<p class="text-[13px]">
+			UI design provided by Tailwind components:  <a href="https://v1.tailwindcss.com/components/cards#stacked ">card</a> and  <a href="https://v1.tailwindcss.com/components/forms#underline-form">form</a>.
+		</p>
 	</div>
 </div>
 <!-- TAKEN FROM END 3 -->

@@ -2,6 +2,8 @@
 
 Daily Weather Forecast - A web application that offers, for a given city, the temperature in degree Celsius at the current time in GMT.
 
+![UI screenshot](daily-weather-forecast-ui-ss.png)
+
 # Technical details
 
 - Requirements: Java 21, npm 10.9.1, Docker (Desktop)
