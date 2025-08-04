@@ -27,9 +27,9 @@ export class DisplayWeatherService {
 	constructor(private http: HttpClient) {
 	}
 
-	getWeatherInfo(): Observable<WeatherDto> {
+	getWeatherInfo(city: string): Observable<WeatherDto> {
 		// TAKEN FROM START 2
-		return this.http.get<WeatherDto>(`${this.baseUrl}`).pipe(
+		return this.http.post<WeatherDto>(`${this.baseUrl}?cityName=${city}`, city).pipe(
 			catchError((error) => {
 				console.error('Error fetching user:', error);
 				return throwError(error);

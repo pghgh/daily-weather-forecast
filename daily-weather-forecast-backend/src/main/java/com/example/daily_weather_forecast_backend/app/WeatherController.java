@@ -5,7 +5,9 @@ import com.example.daily_weather_forecast_backend.weather.dto.WeatherDto;
 import com.example.daily_weather_forecast_backend.weather.service.WeatherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -15,18 +17,13 @@ public class WeatherController {
 
     private final WeatherService weatherService;
 
-    @GetMapping("/location")
-    public LocationDto getLatAndLonOfLocation(LocationDto locationDto) {
-        if (locationDto == null || locationDto.cityName() == null || locationDto.cityName().isEmpty())
-            locationDto = new LocationDto("Vienna", 0., 0.);
-        return weatherService.getLatAndLonOfLocation(locationDto);
-    }
-
-    @GetMapping("/temperature")
-    public WeatherDto getTemperatureOfLocation(LocationDto locationDto) {
-        if (locationDto == null || locationDto.cityName() == null || locationDto.cityName().isEmpty())
-            locationDto = new LocationDto("Vienna", 48.20849, 16.37208);
-        return weatherService.getTemperatureOfLocation(locationDto);
+    @PostMapping("/temperature")
+    public WeatherDto getTemperatureOfLocation(@RequestParam String cityName) {
+        if (cityName == null || cityName.isEmpty())
+            cityName = "Vienna";
+        LocationDto locationDto = new LocationDto(cityName, 0., 0.);
+        LocationDto updatedLocationDto = weatherService.getLatAndLonOfLocation(locationDto);
+        return weatherService.getTemperatureOfLocation(updatedLocationDto);
     }
 
 }

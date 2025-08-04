@@ -11,8 +11,8 @@
 <!-- https://v1.tailwindcss.com/components/cards#stacked -->
 
 <!-- TAKEN FROM 4 -->
-<!-- The code for binding to events when using buttons was taken from: -->
-<!-- https://v17.angular.io/guide/event-binding -->
+<!-- The code for using Angular reactive forms was taken from: -->
+<!-- https://www.digitalocean.com/community/tutorials/angular-reactive-forms-introduction -->
 
 <!-- TAKEN FROM 5 -->
 <!-- The code for centering a div using Tailwind was taken from: -->
@@ -29,20 +29,22 @@
 		<a class="text-[13px]" href="https://www.flaticon.com/free-icon/weather-forecast_9176568?term=weather&page=1&position=25&origin=search&related_id=9176568" title="weather forecast icons">
 			"Weather Forecast free icon" created by Rosa Suave - Flaticon</a>
 		<div class="px-6 py-4">
-			<div class="font-bold text-xl mb-2">City name</div>
+			<div class="font-bold text-xl mb-2">{{ cityName }}, at {{ hour }} o'clock GMT</div>
 			<p class="text-gray-700 text-base">
-				degrees in Celsius
+				{{ temperature }} &deg;C
 			</p>
 		</div>
 		<div class="px-6 pt-4 pb-2">
 			<!-- TAKEN FROM START 2 -->
-			<form class="w-full max-w-sm">
+			<!-- TAKEN FROM START 4 -->
+			<form class="w-full max-w-sm" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+			<!-- TAKEN FROM END 4 -->
 				<div class="flex items-center border-b border-teal-500 py-2">
-					<input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-					       type="text" placeholder="Vienna" aria-label="Full name">
 					<!-- TAKEN FROM START 4 -->
+					<input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+					       type="text" placeholder="Vienna" aria-label="Full name" formControlName="cityNameInput">
 					<button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
-					        type="button" (click)='getWeatherInformation()'>
+					        type="submit">
 						Search for location
 					</button>
 					<!-- TAKEN FROM END 4 -->
