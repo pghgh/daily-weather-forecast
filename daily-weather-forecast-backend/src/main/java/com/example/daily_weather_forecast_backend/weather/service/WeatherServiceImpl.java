@@ -66,7 +66,9 @@ public class WeatherServiceImpl implements WeatherService {
             longitude = Double.parseDouble(longitudeValues.getFirst());
         }
         catch (Exception e) {
-            System.err.print(e.getMessage());
+            cityName = "Vienna";
+            latitude = 48.20849;
+            longitude = 16.37208;
         }
         // TAKEN FROM END 3
         LocationDto updatedLocationDto = new LocationDto(cityName, latitude, longitude);
@@ -108,7 +110,7 @@ public class WeatherServiceImpl implements WeatherService {
             temp = Double.parseDouble(tempString);
         }
         catch (Exception e) {
-            System.err.print(e.getMessage());
+            cityName = "Vienna";
         }
         // TAKEN FROM END 3
 
