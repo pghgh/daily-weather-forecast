@@ -1,6 +1,6 @@
 # daily-weather-forecast
 
-Daily Weather Forecast - A web application that offers daily weather information
+Daily Weather Forecast - A web application that offers, for a given city, the temperature in degree Celsius at the current time in GMT.
 
 # Technical details
 
