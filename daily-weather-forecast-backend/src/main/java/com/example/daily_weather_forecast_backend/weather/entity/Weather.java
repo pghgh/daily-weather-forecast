@@ -12,7 +12,6 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import org.hibernate.annotations.CreationTimestamp;
 
 /*
 TAKEN FROM 1
@@ -47,9 +46,8 @@ public class Weather {
     @Column(name = "city_name")
     private String cityName;
 
-    @Column(name = "timestamp")
-    @CreationTimestamp
-    private LocalDateTime timestamp;
+    @Column(name = "hour")
+    private Integer hour;
 
     @Column(name = "temperature")
     private Double temperature;

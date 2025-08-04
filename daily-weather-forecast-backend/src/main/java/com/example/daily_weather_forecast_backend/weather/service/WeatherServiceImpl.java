@@ -118,7 +118,7 @@ public class WeatherServiceImpl implements WeatherService {
         location.setLon(lon);
         locationRepository.save(location);
 
-        WeatherDto weatherDto = new WeatherDto(location.getId(), lat, lon, cityName, timeNow, temp);
+        WeatherDto weatherDto = new WeatherDto(location.getId(), lat, lon, cityName, hourNow, temp);
         return weatherDto;
     }
 }
