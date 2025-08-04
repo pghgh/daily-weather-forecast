@@ -25,24 +25,25 @@ https://www.digitalocean.com/community/tutorials/angular-reactive-forms-introduc
 export class AppComponent {
 
 	title = 'daily-weather-forecast-frontend';
-	cityName = 'Vienna'
-	temperature = 0
-	hour = 0
+	cityName = 'Vienna';
+	temperature = 0;
+	hour = 0;
 	// TAKEN FROM START 2
-	myForm: FormGroup;
+	form: FormGroup;
 
 	constructor(private displayWeatherService: DisplayWeatherService, private fb: FormBuilder) {
-		this.myForm = new FormGroup({})
+		this.form = new FormGroup({})
 	}
 
+	/*
 	ngOnInit() {
-		this.myForm = this.fb.group({
+		this.form = this.fb.group({
 			cityNameInput: ['Vienna', Validators.required],
 		});
 	}
+	 */
 
 	onSubmit(form: FormGroup) {
-		console.log('Valid?', form.valid); // true or false
 		console.log('Name', form.value.cityNameInput);
 		this.getWeatherInformation(form.value.cityNameInput);
 	}

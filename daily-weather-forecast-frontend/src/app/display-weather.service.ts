@@ -22,7 +22,7 @@ https://stackoverflow.com/a/48837719
 export class DisplayWeatherService {
 
     // TAKEN FROM START 1
-	private baseUrl = 'http://localhost:8080/api/v1/daily-weather-forecast/temperature';
+	baseUrl = 'http://localhost:8080/api/v1/daily-weather-forecast/temperature';
 
 	constructor(private http: HttpClient) {
 	}
