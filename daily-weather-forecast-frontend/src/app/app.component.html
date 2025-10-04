@@ -20,20 +20,16 @@
 
 <!-- TAKEN FROM START 3 -->
 <!-- TAKEN FROM START 5 -->
-<div class="flex flex-row min-h-screen justify-center items-center">
+<div class="flex flex-col gap-2 min-h-screen justify-center items-center">
 	<!-- TAKEN FROM END 5 -->
 	<div class="max-w-sm rounded overflow-hidden shadow-lg">
 		<!-- TAKEN FROM START 1 -->
 		<img class="w-full" src="assets/weather-forecast.png">
 		<!-- TAKEN FROM END 1 -->
-		<a class="text-[13px]"
-		   href="https://www.flaticon.com/free-icon/weather-forecast_9176568?term=weather&page=1&position=25&origin=search&related_id=9176568"
-		   title="weather forecast icons">
-			"Weather Forecast free icon" created by Rosa Suave - Flaticon</a>
 		<div class="px-6 py-4">
-			<div class="font-bold text-xl mb-2">{{ cityName }}, at {{ hour }} o'clock GMT</div>
-			<p class="text-gray-700 text-base">
-				{{ temperature }} &deg;C &rarr; data obtained from <a href="https://open-meteo.com/">open-meteo.com</a>.
+			<div class="text-center text-xl mb-2">{{ cityName }}, at {{ hour }} o'clock GMT</div>
+			<p class="font-bold text-black text-center text-4xl">
+				{{ temperature }} &deg;C
 			</p>
 		</div>
 		<div class="px-6 pt-4 pb-2">
@@ -41,11 +37,11 @@
 			<!-- TAKEN FROM START 4 -->
 			<form class="w-full max-w-sm" [formGroup]="formWeather" (ngSubmit)="onSubmit(formWeather)">
 				<!-- TAKEN FROM END 4 -->
-				<div class="flex items-center border-b border-teal-500 py-2">
+				<div class="flex items-center border-b border-blue-500 py-2">
 					<!-- TAKEN FROM START 4 -->
-					<input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
-					       type="text" placeholder="Vienna" aria-label="Full name" formControlName="cityNameInput">
-					<button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+					<input class="appearance-none bg-transparent border-none w-full text-black mr-3 py-1 px-2 leading-tight focus:outline-none"
+					       type="text" formControlName="cityNameInput">
+					<button class="flex-shrink-0 bg-blue-500 hover:bg-blue-700 border-blue-500 hover:border-blue-700 text-sm border-4 text-white py-1 px-2 rounded"
 					        type="submit">
 						Search for location
 					</button>
@@ -54,9 +50,20 @@
 			</form>
 			<!-- TAKEN FROM END 2 -->
 		</div>
-		<p class="text-[13px]">
-			UI design provided by Tailwind components:  <a href="https://v1.tailwindcss.com/components/cards#stacked ">card</a> and  <a href="https://v1.tailwindcss.com/components/forms#underline-form">form</a>.
-		</p>
 	</div>
+	<p class="font-bold text-xl">Mentions:</p>
+	<ul class="list-none text-center">
+		<li>The weather data was obtained from <a class="underline text-blue-500" href="https://open-meteo.com/">open-meteo.com</a>.
+		</li>
+		<li> The used icon, <a class="underline text-blue-500"
+		                       href="https://www.flaticon.com/free-icon/weather-forecast_9176568?term=weather&page=1&position=25&origin=search&related_id=9176568">
+			"Weather Forecast free icon"</a>,
+			was created by Rosa Suave from Flaticon.
+		</li>
+		<li>The UI design was provided by the Tailwind components <a class="underline text-blue-500"
+		                                                             href="https://v1.tailwindcss.com/components/cards#stacked ">card</a>
+			and <a class="underline text-blue-500" href="https://v1.tailwindcss.com/components/forms#underline-form">form</a>.
+		</li>
+	</ul>
 </div>
 <!-- TAKEN FROM END 3 -->
